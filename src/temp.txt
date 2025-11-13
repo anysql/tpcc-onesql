@@ -1,0 +1,13 @@
+SELECT no_w_id, no_d_id, no_o_id
+          FROM new_orders JOIN ( SELECT 0 c1, 0 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = 0 AND no_d_id = 0 UNION ALL
+				 SELECT ? c1, 1 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 1 UNION ALL
+                                 SELECT ? c1, 2 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 2 UNION ALL
+                                 SELECT ? c1, 3 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 3 UNION ALL
+                                 SELECT ? c1, 4 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 4 UNION ALL
+                                 SELECT ? c1, 5 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 5 UNION ALL
+                                 SELECT ? c1, 6 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 6 UNION ALL
+                                 SELECT ? c1, 7 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 7 UNION ALL
+                                 SELECT ? c1, 8 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 8 UNION ALL
+                                 SELECT ? c1, 9 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 9 UNION ALL
+                                 SELECT ? c1, 10 c2, COALESCE(MIN(no_o_id), 0) c3 FROM new_orders WHERE no_w_id = ? AND no_d_id = 10) tmp
+                        ON no_w_id = c1 AND no_d_id = c2 AND no_o_id = c3 FOR UPDATE;
