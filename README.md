@@ -3,6 +3,7 @@ Improvements
    * Use mysql_real_query interface for less network round trips
    * Batch multiple rows in single request
    * Partition some tables for better performance
+   * tpcc_load can generate text files and then load it quickly
 
 Builds
 ===================================
