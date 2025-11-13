@@ -1,3 +1,11 @@
+Improvements
+===================================
+   * Use mysql_real_query interface for less network round trips
+   * Batch multiple rows in single request
+   * Partition some tables for better performance
+
+Builds
+===================================
 1. Build binaries
    * `cd src ; make`
    ( you should have mysql_config available in $PATH)
